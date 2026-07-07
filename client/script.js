@@ -148,7 +148,7 @@ const renderCartUI = () => {
     countEl.classList.add('bump');
   }
 
-  if (totalEl) totalEl.textContent = `$${total}`;
+  if (totalEl) totalEl.textContent = `₤${total}`;
   if (!listEl) return;
 
   if (cart.length === 0) {
@@ -175,7 +175,7 @@ const renderCartUI = () => {
           </div>
         </div>
         <div>
-          <p class="cart-item__price">$${product.price * quantity}</p>
+          <p class="cart-item__price">₤${product.price * quantity}</p>
           <button class="btn--icon" style="margin-top:0.5rem;font-size:0.75rem;" data-action="remove" data-id="${productId}" aria-label="Remove ${product.name}">✕</button>
         </div>
       </li>`;
