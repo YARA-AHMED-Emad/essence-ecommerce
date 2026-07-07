@@ -132,7 +132,7 @@ const renderFilteredGrid = () => {
         </h3>
         <div class="card__rating">${stars(p.rating)}</div>
         <div class="card__footer">
-          <span class="card__price">$${p.price}</span>
+          <span class="card__price">₤${p.price}</span>
           <button class="card__add-btn" data-id="${p.id}" aria-label="Add ${p.name} to cart">Add</button>
         </div>
       </div>
