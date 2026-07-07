@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Essence — Sign In</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body class="auth-body">
+
+  <!-- Toast -->
+  <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Back to store -->
+  <a href="index.html" class="auth-back">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    Back to Store
+  </a>
+
+  <div class="auth-page">
+
+    <!-- LEFT PANEL: Decorative -->
+    <div class="auth-panel auth-panel--left">
+      <div class="auth-panel__noise"></div>
+      <div class="auth-panel__content">
+        <div class="auth-brand">
+          <span class="auth-brand__line"></span>
+          <p class="auth-brand__name">Essence</p>
+          <span class="auth-brand__line"></span>
+        </div>
+        <blockquote class="auth-quote">
+          <p>"A fragrance is the unseen, unforgettable, ultimate fashion accessory."</p>
+          <cite>— Coco Chanel</cite>
+        </blockquote>
+        <div class="auth-deco">
+          <div class="auth-deco__ring auth-deco__ring--1"></div>
+          <div class="auth-deco__ring auth-deco__ring--2"></div>
+          <div class="auth-deco__ring auth-deco__ring--3"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT PANEL: Form -->
+    <div class="auth-panel auth-panel--right">
+      <div class="auth-form-wrap">
+
+        <!-- Tabs -->
+        <div class="auth-tabs" role="tablist">
+          <button class="auth-tab active" id="tab-login" role="tab" aria-selected="true" aria-controls="form-login">
+            Sign In
+          </button>
+          <button class="auth-tab" id="tab-register" role="tab" aria-selected="false" aria-controls="form-register">
+            Create Account
+          </button>
+          <span class="auth-tab__indicator" id="tab-indicator"></span>
+        </div>
+
+        <!-- ── LOGIN FORM ── -->
+        <form class="auth-form active" id="form-login" novalidate>
+          <div class="auth-form__header">
+            <h1 class="auth-form__title">Welcome back</h1>
+            <p class="auth-form__subtitle">Sign in to your Essence account</p>
+          </div>
+
+          <div class="auth-field">
+            <label class="auth-label" for="login-email">Email Address</label>
+            <div class="auth-input-wrap">
+              <svg class="auth-input-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <input class="auth-input" type="email" id="login-email" placeholder="your@email.com" autocomplete="email" required>
+            </div>
+            <span class="auth-error" id="login-email-err"></span>
+          </div>
+
+          <div class="auth-field">
+            <label class="auth-label" for="login-password">Password</label>
+            <div class="auth-input-wrap">
+              <svg class="auth-input-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+              <input class="auth-input" type="password" id="login-password" placeholder="••••••••" autocomplete="current-password" required>
+              <button type="button" class="auth-toggle-pw" data-target="login-password" aria-label="Toggle password">
+                <svg class="eye-icon eye-icon--show" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                <svg class="eye-icon eye-icon--hide" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:none"><path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19m-6.72-1.07a3 3 0 11-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+              </button>
+            </div>
+            <span class="auth-error" id="login-pw-err"></span>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--full auth-submit" id="login-submit">
+            <span class="auth-submit__text">Sign In</span>
+            <span class="auth-submit__loader" hidden>
+              <svg class="spin" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" opacity=".25"/><path d="M21 12a9 9 0 00-9-9"/></svg>
+            </span>
+          </button>
+
+          <p class="auth-switch">
+            Don't have an account?
+            <button type="button" class="auth-switch__btn" data-goto="register">Create one</button>
+          </p>
+        </form>
+
+        <!-- ── REGISTER FORM ── -->
+        <form class="auth-form" id="form-register" novalidate>
+          <div class="auth-form__header">
+            <h1 class="auth-form__title">Join Essence</h1>
+            <p class="auth-form__subtitle">Create your account to begin</p>
+          </div>
+
+          <div class="auth-field">
+            <label class="auth-label" for="reg-name">Full Name</label>
+            <div class="auth-input-wrap">
+              <svg class="auth-input-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <input class="auth-input" type="text" id="reg-name" placeholder="Your full name" autocomplete="name" required>
+            </div>
+            <span class="auth-error" id="reg-name-err"></span>
+          </div>
+
+          <div class="auth-field">
+            <label class="auth-label" for="reg-email">Email Address</label>
+            <div class="auth-input-wrap">
+              <svg class="auth-input-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <input class="auth-input" type="email" id="reg-email" placeholder="your@email.com" autocomplete="email" required>
+            </div>
+            <span class="auth-error" id="reg-email-err"></span>
+          </div>
+
+          <div class="auth-field">
+            <label class="auth-label" for="reg-password">Password</label>
+            <div class="auth-input-wrap">
+              <svg class="auth-input-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+              <input class="auth-input" type="password" id="reg-password" placeholder="Min 6 characters" autocomplete="new-password" required>
+              <button type="button" class="auth-toggle-pw" data-target="reg-password" aria-label="Toggle password">
+                <svg class="eye-icon eye-icon--show" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                <svg class="eye-icon eye-icon--hide" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:none"><path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19m-6.72-1.07a3 3 0 11-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+              </button>
+            </div>
+            <div class="password-strength" id="pw-strength" hidden>
+              <div class="password-strength__bar">
+                <span class="password-strength__fill" id="pw-fill"></span>
+              </div>
+              <span class="password-strength__label" id="pw-label"></span>
+            </div>
+            <span class="auth-error" id="reg-pw-err"></span>
+          </div>
+
+          <div class="auth-field">
+            <label class="auth-label" for="reg-confirm">Confirm Password</label>
+            <div class="auth-input-wrap">
+              <svg class="auth-input-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+              <input class="auth-input" type="password" id="reg-confirm" placeholder="Repeat password" autocomplete="new-password" required>
+            </div>
+            <span class="auth-error" id="reg-confirm-err"></span>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--full auth-submit" id="register-submit">
+            <span class="auth-submit__text">Create Account</span>
+            <span class="auth-submit__loader" hidden>
+              <svg class="spin" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" opacity=".25"/><path d="M21 12a9 9 0 00-9-9"/></svg>
+            </span>
+          </button>
+
+          <p class="auth-switch">
+            Already have an account?
+            <button type="button" class="auth-switch__btn" data-goto="login">Sign in</button>
+          </p>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+</body>
+</html>
