@@ -3,7 +3,7 @@
 //  Communicates with /api/users/login & /api/users/register
 // ============================================================
 
-const API = 'http://localhost:5000/api';
+const API = 'https://essence-backend-api.onrender.com';
 
 // ── Token helpers ─────────────────────────────────────────
 const saveUser  = (data) => localStorage.setItem('essence_user', JSON.stringify(data));
