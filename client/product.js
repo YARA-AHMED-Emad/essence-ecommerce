@@ -121,15 +121,16 @@ const initProductPage = async () => {
   const id = getIdFromURL();
   if (!id) { window.location.href = 'index.html'; return; }
 
+  if (!PRODUCTS || PRODUCTS.length === 0) await fetchProducts();
+  
   currentProduct = await fetchProductById(id);
 
   if (!currentProduct) {
     document.getElementById('product-loading').innerHTML =
       '<p style="color:var(--clr-text-muted);font-family:var(--font-body);text-align:center;">Product not found. <a href="index.html" style="color:var(--clr-gold-light)">Go back</a></p>';
+    document.getElmentById('product-content').style.display = 'none';
     return;
   }
-
-  if (!PRODUCTS || PRODUCTS.length === 0) await fetchProducts();
 
   renderProduct(currentProduct);
   renderCartUI();
