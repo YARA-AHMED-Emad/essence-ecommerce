@@ -52,23 +52,6 @@ const renderProduct = (product) => {
     else badge.style.display = 'none';
   }
 
-  const thumbsContainer = document.getElementById('gallery-thumbs');
-  if (thumbsContainer) {
-    thumbsContainer.innerHTML = [product.image, product.image, product.image]
-      .map((src, i) => `<div class="thumb ${i === 0 ? 'active' : ''}" data-thumb="${i}"><img src="${src}" alt="${product.name} view ${i + 1}"></div>`).join('');
-    thumbsContainer.addEventListener('click', (e) => {
-      const thumb = e.target.closest('.thumb');
-      if (!thumb) return;
-      thumbsContainer.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
-      thumb.classList.add('active');
-      if (mainImg) {
-        mainImg.style.opacity = '0';
-        setTimeout(() => { mainImg.src = thumb.querySelector('img').src; mainImg.style.opacity = '1'; }, 150);
-        mainImg.style.transition = 'opacity 0.15s';
-      }
-    });
-  }
-
   const nameEl = document.getElementById('product-name');
   if (nameEl) nameEl.textContent = product.name;
 
