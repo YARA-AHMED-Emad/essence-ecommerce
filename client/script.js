@@ -3,7 +3,7 @@
 //  Products come from API, fallback to local data if offline
 // ============================================================
 
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = 'https://essence-backend-api.onrender.com';
 
 // ── Auth helpers (shared across all pages) ────────────────
 const getUser  = () => { try { return JSON.parse(localStorage.getItem('essence_user')); } catch { return null; } };
