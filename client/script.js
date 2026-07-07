@@ -12,15 +12,15 @@ const removeUser = () => localStorage.removeItem('essence_user');
 
 // ── Fallback data (if API is offline) ────────────────────
 const PRODUCTS_FALLBACK = [
-  { id: 1, name: 'Midnight Rose',  price: 120, image: 'coco.jpeg',   rating: 5 },
-  { id: 2, name: 'Golden Oud',     price: 180, image: 'gcoco.jpeg',  rating: 5 },
-  { id: 3, name: 'Velvet Musk',    price: 150, image: 'v.jpeg',      rating: 4 },
-  { id: 4, name: 'Silver Sage',    price: 95,  image: 's.jpeg',      rating: 5 },
-  { id: 5, name: 'Ocean Breeze',   price: 110, image: 'o.jpeg',      rating: 4 },
-  { id: 6, name: 'Amber Night',    price: 210, image: 'a.jpeg',      rating: 5 },
-  { id: 7, name: 'Floral Bloom',   price: 135, image: 'fl.jpeg',     rating: 3 },
-  { id: 8, name: 'Desert Sand',    price: 165, image: 'desert.jpeg', rating: 5 },
-  { id: 9, name: 'Mystic Wood',    price: 190, image: 'my.jpeg',     rating: 4 },
+  { id: 1, name: 'Midnight Rose',  price: 15.000, image: 'coco.jpeg',   rating: 5 },
+  { id: 2, name: 'Golden Oud',     price: 12.500, image: 'gcoco.jpeg',  rating: 5 },
+  { id: 3, name: 'Velvet Musk',    price: 7.500, image: 'v.jpeg',      rating: 4 },
+  { id: 4, name: 'Silver Sage',    price: 14.500,  image: 's.jpeg',      rating: 5 },
+  { id: 5, name: 'Ocean Breeze',   price: 11.500, image: 'o.jpeg',      rating: 4 },
+  { id: 6, name: 'Amber Night',    price: 14.500, image: 'a.jpeg',      rating: 5 },
+  { id: 7, name: 'Floral Bloom',   price: 16.500, image: 'fl.jpeg',     rating: 3 },
+  { id: 8, name: 'Desert Sand',    price: 800, image: 'desert.jpeg', rating: 5 },
+  { id: 9, name: 'Mystic Wood',    price: 15.000, image: 'my.jpeg',     rating: 4 },
 ];
 
 // ── Global products array (filled from API or fallback) ───
