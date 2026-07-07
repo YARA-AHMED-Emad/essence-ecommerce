@@ -27,7 +27,7 @@ const buildStarsHTML = (rating, max = 5) =>
 
 const fetchProductById = async (id) => {
   try {
-    const res = await fetch(`http://localhost:5000/api/products/${id}`);
+    const res = await fetch(`https://essence-backend-api.onrender.com/api/products/${id}`);
     if (!res.ok) throw new Error('not found');
     const p = await res.json();
     return { id: p._id, name: p.title, price: p.price, image: p.image, rating: p.rating, badge: p.badge, stock: p.stock };
