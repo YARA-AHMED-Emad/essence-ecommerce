@@ -62,7 +62,7 @@ const renderProduct = (product) => {
   if (reviewEl) reviewEl.textContent = `(${details.reviewCount || 0} reviews)`;
 
   const priceEl = document.getElementById('product-price');
-  if (priceEl) priceEl.textContent = `$${product.price}`;
+  if (priceEl) priceEl.textContent = `₤${product.price}`;
 
   const descEl = document.getElementById('product-desc');
   if (descEl) descEl.textContent = details.description || 'A sophisticated fragrance crafted from the finest ingredients.';
@@ -93,7 +93,7 @@ const renderRelated = (currentId) => {
         <h3 class="card__name"><a href="product.html?id=${p.id}" style="text-decoration:none;color:inherit;">${p.name}</a></h3>
         <div class="card__rating">${buildStarsHTML(p.rating)}</div>
         <div class="card__footer">
-          <span class="card__price">$${p.price}</span>
+          <span class="card__price">₤${p.price}</span>
           <button class="card__add-btn" data-id="${p.id}">Add</button>
         </div>
       </div>
