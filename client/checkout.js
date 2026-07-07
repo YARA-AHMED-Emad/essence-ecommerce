@@ -147,10 +147,10 @@ const renderSummary = () => {
   }).join('');
 
   const { subtotal, ship, tax, discount, codFee, total } = calcTotals();
-  setText('#summary-subtotal', `$${subtotal}`);
-  setText('#summary-shipping', `$${ship}`);
-  setText('#summary-tax', `$${tax}`);
-  setText('#summary-total', `$${total}`);
+  setText('#summary-subtotal', `₤${subtotal}`);
+  setText('#summary-shipping',`₤${ship}`);
+  setText('#summary-tax', `₤${tax}`);
+  setText('#summary-total', `₤${total}`);
 
   // Discount row
   let discountRow = document.getElementById('summary-discount-row');
@@ -162,7 +162,7 @@ const renderSummary = () => {
       discountRow.style.color = '#5a9e6a';
       $('#summary-tax')?.closest('.summary-row')?.after(discountRow);
     }
-    discountRow.innerHTML = `<span>Discount (${checkoutState.coupon.label})</span><span style="color:#5a9e6a">-$${discount}</span>`;
+    discountRow.innerHTML = `<span>Discount (${checkoutState.coupon.label})</span><span style="color:#5a9e6a">-₤${discount}</span>`;
   } else {
     discountRow?.remove();
   }
@@ -176,7 +176,7 @@ const renderSummary = () => {
       codRow.className = 'summary-row';
       $('.order-summary__divider:last-of-type')?.before(codRow);
     }
-    codRow.innerHTML = `<span>COD Fee</span><span>$${codFee}</span>`;
+    codRow.innerHTML = `<span>COD Fee</span><span>₤${codFee}</span>`;
   } else {
     codRow?.remove();
   }
@@ -283,7 +283,7 @@ const populateReview = () => {
           <img class="review-item__img" src="${p.image}" alt="${p.name}">
           <span class="review-item__name">${p.name}</span>
           <span class="review-item__qty">× ${quantity}</span>
-          <span class="review-item__price">$${p.price * quantity}</span>
+          <span class="review-item__price">₤${p.price * quantity}</span>
         </li>`;
     }).join('');
   }
