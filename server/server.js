@@ -15,7 +15,20 @@ const PORT = process.env.PORT || 5000;
 connectDB();
 
 // ── Middleware ────────────────────────────────────────────
-app.use(cors());
+// ── Middleware ────────────────────────────────────────────
+app.use(cors({
+  origin: [
+    'https://essence-ecommerce-khaki.vercel.app', // لينك فيرسل بتاعك
+    'http://localhost:3000',
+    'http://localhost:5000',
+    'http://127.0.0.1:5500'
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+}));
+
+app.use(express.json());
 app.use(express.json());
 
 // ── API Routes ────────────────────────────────────────────
@@ -32,5 +45,5 @@ app.get(/.*/, (req, res) => {
 
 // ── Start Server ──────────────────────────────────────────
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
+  console.log(`🚀 Server running on https://essence-backend-api.onrender.com:${PORT}`);
 });
